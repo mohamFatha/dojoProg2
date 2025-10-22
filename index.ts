@@ -16,9 +16,10 @@ async function handler(_req: Request): Promise<Response> {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
 
+    const body = await _req.json();
     const similarityRequestBody = JSON.stringify({
-        word1: "centrale",
-        word2: "supelec",
+        word1: "salut",
+        word2: body.word,
     });
 
     const requestOptions = {
